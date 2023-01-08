@@ -55,7 +55,7 @@ app.get("/", function (req, res) {
 app.get("/login", function (req, res) {
   res.render("login");
 });
-app.get("/signin", function (req, res) {
+app.get("/signup", function (req, res) {
   res.render("register");
 });
 app.get("/short", function (req, res) {
@@ -69,7 +69,7 @@ app.get("/short", function (req, res) {
 
 
 var k = 1;
-app.post("/register", function (req, res) {
+app.post("/signup", function (req, res) {
   User.findOne({ username: req.body.username }, function (err, user) {
     if (err) console.log(err);
     if (user) {
